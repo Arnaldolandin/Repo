@@ -1,0 +1,245 @@
+<?php
+
+
+require_once('../usuario.php');
+session_start();
+
+
+$usuario=new Usuario();
+$usuario=  $_SESSION['usuario'] ;
+$nivel =  $usuario->getNivel();
+$usuarioo =  $usuario->getNombre();
+echo "      Hola:"  .$usuarioo . "  ".$nivel;
+
+if (!isset($_SESSION['usuario'])) {
+    header('Location: index.php');
+}
+else
+{
+
+
+
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reportes AT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../CSS/Estilo.css" rel="stylesheet" type="text/css">
+<div >
+        <h1>Plan de Trabajo .         AT</h1>
+
+
+    </div>
+</head>
+
+
+<body>
+<div class="padre">
+    <header class="header">
+        <div class="Menu">
+            <div class="Logo">
+                <a href="../index.php" > AT </a>
+
+            </div>
+            <nav class="nav">
+
+                <ul class="menu">
+                    <li>  <a href="../Cuenta.php"> Inicio </a></li>
+                    <li><a href="../MostrarReportes.php">Reportes </a>
+                        <ul class="submenu">
+                            <li> <?php  if($nivel == 1){  echo "<a href='../AgregarReporte.php'> Agregar Reporte </a>"; };?></li>
+                            <li> <a href="../MostrarReportes.php"> Mostrar Reportes </a></li>
+
+                        </ul>
+
+                    </li>
+                    <li> <a href=""> Usuarios </a>
+
+
+                        <ul class="submenu">
+
+
+                            <li>    <?php  if($nivel == 1)
+                                {
+                                    echo "  <a href='../registrarse.php'>Registrar otro usuario</a> ";
+
+                                }
+
+                                ?> </li>
+                        </ul>
+
+                    </li>
+
+                    <li>    <a href="../PlanDeTrabajo/MostrarPlanDeTrabajo.php"> Plan de Trabajo </a>
+                        <ul class="submenu">
+                            <li>    <a href="../PlanDeTrabajo/AgregarPlanDeTrabajo.php"> Agregar Plan de Trabajo </a> </li>
+                            <li>    <a href="../PlanDeTrabajo/MostrarPlanDeTrabajo.php"> Plan de Trabajo </a> </li>
+                        </ul>
+                    <li>    <a href=""> Cursos </a>
+                        <ul class="submenu">
+                            <li> <a href="../Cursos/Mostrar_Curso.php"> Curso Generales</a></li>
+                            <li> <a href="../Cursos/Mostrar_Curso.php"> Curso AT </a></li>
+
+                        </ul>
+
+                    </li>
+
+
+
+
+
+                    <li>  <a href="../index.php"> Salir </a>     </li>
+
+
+
+                </ul>
+            </nav>
+
+
+        </div>
+        <div class="TextoPrincipall">
+            <h1>   </h1>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+
+    <div >
+        <h4>AT 2020</h4>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+    <?php
+         $dirname = "E:/Pelis2/Paquete/Documentales/Documentales Variados/";
+  /*  $dirname = "videoss/Videos";
+ <source src="<?php echo "videoss/Videos/".$file ; ?> " type="video/mp4">
+   $dirname = "localhost/videoss/";
+*/
+$dh = opendir($dirname);
+
+while ( ! is_bool($file = readdir($dh)))
+{
+    if (!is_dir('$dirname/$file'))
+    {
+        if($file != "."  )
+        {
+            if($file != ".."  )
+        {
+           $Subtitulo = "videoss/Subtitulos/".$file . ".vtt";
+
+            ?>
+<div id="video">
+<table border=0  cellspacing=0 cellpadding=0 class="tablavideo" >
+    <tr>
+
+    <td>
+        <video id="videoPlayer" width="100" controls preload class="videoP" >
+
+            <source src="<?php echo "videoss/".$file ; ?> " type="video/mp4">
+            <track src= "<?php echo $Subtitulo ; ?>"  kind="subtitles" srclang="es" label="Español">
+
+        Tu navegador no soporta el vídeo de HTML5
+        </video>
+        </td>
+    <tr>  <td width="20px">
+
+        <?php echo  $file; ?>
+        </td></tr>
+
+    </tr>
+</table>
+</div>
+        <?php
+        }}
+    }
+
+
+}
+
+closedir($dh);
+
+    ?>
+
+
+
+
+
+
+
+
+.slider {
+   width: 95%;
+margin: auto;
+overflow: hidden;
+}
+.slider ul {
+    display: flex;
+     padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate linear;
+
+}
+.slider li {
+    width: 100%;
+  list-style: none;
+
+}
+.slider img {
+    width: 110%;
+
+
+}
+
+@keyframes cambio {
+    0% { margin-left: 0;  }
+    20% { margin-left: 0;  }
+
+    25% { margin-left: -100%;  }
+    45% { margin-left: -100%;  }
+
+    50% { margin-left: -200%;  }
+    70% { margin-left: -200%;  }
+
+    75% { margin-left: -300%;  }
+    100% { margin-left: -300%;  }
+}

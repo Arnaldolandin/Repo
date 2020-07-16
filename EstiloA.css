@@ -1,0 +1,51 @@
+*{
+
+     padding: 10px;
+    margin: 10px;
+    font-family:  Century Gothi;
+
+
+}
+
+body
+{
+    background-color: #ededed;
+}
+
+form
+{
+    width: 800px;
+    margin: auto;
+    background-color: #3bb1ff;
+
+}
+input
+{
+    margin: 12px;
+    padding: 8px ;
+    width : 660px;
+
+}
+
+textarea
+{
+    margin: 12px;
+    padding: 8px ;
+    width : 660px;
+
+}
+
+button
+{
+    margin: 12px;
+    padding: 10px ;
+    width : 120px;
+
+}
+header
+{
+    width: 900px;
+    margin: auto;
+    background-color: #5992ff;
+
+}

@@ -1,0 +1,89 @@
+*{
+
+    padding: 10px;
+    margin: 10px;
+    font-family:  Century Gothi;
+
+
+}
+
+body
+{
+    background-color: #ededed;
+
+}
+a{
+    text-decoration: none;
+}
+.padre{
+    background: rgba(47, 123, 255, 0.81);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+
+}
+.header{
+    background: rgba(102, 148, 245, 0.86);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+
+}
+
+.menu{
+    background: rgba(39, 100, 250, 0.48);
+
+    display: flex;
+
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+    padding:  0 15px;
+}
+.Logo{
+
+    flex: 1 1 auto;
+}
+.Logo a{
+    color:#fff;
+
+}
+.Logo a:hover{
+    color:#343434;
+    text-decoration: none;
+}
+.nav{
+
+    flex: 1 1 auto;
+}
+.nav a{
+    color:#fff;
+
+}
+.nav a:hover{
+    color:#343434;
+    text-decoration: none;
+}
+.social{
+    display: flex;
+    flex: 1 1 auto;
+
+}
+.TextoPrincipall{
+      flex: 1 1 auto;
+}
+.TextoPrincipall a{
+    color:#fff;
+
+}
+.TextoPrincipall a:hover{
+    color:#343434;
+    text-decoration: none;
+}
+
+.Table{
+    background: rgba(47, 152, 254, 0.29);
+
+}
